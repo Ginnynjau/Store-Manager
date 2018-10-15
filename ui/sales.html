@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!--Wrapper start-->
+    <div class= "wrapper">
+        <!--Header-->
+        <header class= "main-header">
+            <p>You are logged in as :</p>
+            <h1> Store Manager</h1>
+            
+        </header>
+    
+    
+        <!--Navigation Bar-->
+        <nav class= "navbar">
+            <ul>
+                <li></li>
+                <li></li>
+                <li class= "current"> <a href="dashboard.html">Dashboard</a> </li>
+                <li> <a href="store.html">Store</a></li>
+                <li> <a href="#suppliers">Suppliers </a></li>
+                <li> <a href="#help">Help</a></li>
+            </ul>
+        </nav> 
+
+        <!--Main Body-->
+        <section class= "show">
+            <!--Animated side navigation-->
+            <div id="mySidenav" class="sidenav">
+                <a href="users.html" id="users">Users</a>
+                <a href="products.html" id="products">Products</a>
+                <a href="sales.html" id="sales">Sales</a>
+                <a href="reports.html" id="reports">Reports</a>
+            </div>
+            <!-- The sidebar -->
+            <div class="sidebar">  
+                <div class="tab">
+                    <button  class="tablinks sales" onclick="openSalesTab(event, 'user-sales')" id="defaultOpen" >User Sales </button>
+                    <button class="tablinks sales" onclick="openSalesTab(event, 'daily-sales')" >Daily Sales</button>
+                    <button  class="tablinks sales" onclick="openSalesTab(event, 'weekly-sales')" >Weekly Sales</button>
+                    <button  class="tablinks sales" onclick="openSalesTab(event, 'monthly-sales')">Monthly Sales </button>
+                    <button class="tablinks sales" onclick="openSalesTab(event, 'quarterly-sales')" >Quarterly Sales</button>
+                    <button  class="tablinks sales" onclick="openSalesTab(event, 'annual-sales')" >Annual Sales </button>
+               </div>
+               
+                <!-- Page content -->
+                <div id="user-sales" class="tabcontent" >
+                    <div class="search">
+                        <form action="" method="GET" id="salesSearch">
+                            <legend><span class="heading">User's Daily Sales</span></legend> 
+                            <input type="search" placeholder="Search User by Name.." name="search"> <br>            
+                            <label>Date:</label> <input type="date"> <br>                
+                            <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                        </form>
+                    </div>
+                    <div class="form">
+                            <form enctype="text/plain" id="userSales-form" action="" method="">
+                                <fieldset>
+                                    <input type="text" name="usersName" placeholder="User's Name" disabled> 
+                                    <input type="text" name="date" placeholder="Date" disabled>
+                                    <textarea  name="viewUsersSales " placeholder="View the selected User's Sales here..." disabled></textarea>
+                                </fieldset> 
+                            </form>
+                    </div>                    
+                </div>  
+
+                <div id="daily-sales" class="tabcontent" style="display:none">
+                    <div class="search">
+                        <form action="" method="GET" id="salesSearch">
+                            <legend><span class="heading"> Daily Sales</span></legend>
+                            <label>Date:</label> <input type="date"> <br>                
+                            <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                        </form>
+                    </div>
+                    <div class="form">
+                        <form enctype="text/plain" id="dailySales-form" action="" method="">
+                                <fieldset> 
+                                    <input type="text" name="date" placeholder="Date" disabled>                               
+                                    <textarea  name="viewDailySales " placeholder="View the Daily Sales here..." disabled></textarea>
+                                 </fieldset> 
+                        </form>
+                    </div>
+                </div> 
+
+                <div id="weekly-sales" class="tabcontent" style="display:none">
+                    <div class="search">
+                        <form action="" method="GET" id="salesSearch">
+                            <legend><span class="heading"> Weekly Sales</span></legend>
+                            <label> Date From :</label> <input type="date"> <br>
+                            <label> Date To :</label> <input type="date"> <br>                
+                            <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                        </form>
+                    </div>
+                    <div class="form">
+                        <form enctype="text/plain" id="weeklySales-form" action="" method="">
+                            <fieldset> 
+                                <input type="text" name="date" placeholder="Date" disabled>                               
+                                <textarea  name="viewWeeklySales " placeholder="View the Weekly Sales here..." disabled></textarea>
+                             </fieldset> 
+                        </form>
+                    </div> 
+                </div>
+                
+                <div id="monthly-sales" class="tabcontent" style="display:none">
+                        <div class="search">
+                                <form action="" method="GET" id="salesSearch">
+                                    <legend><span class="heading"> Monthly Sales</span></legend>
+                                    <label> Date From :</label> <input type="date"> <br>
+                                    <label> Date To :</label> <input type="date"> <br>                
+                                    <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                                </form>
+                        </div>
+                        <div class="form">
+                                <form enctype="text/plain" id="monthlySales-form" action="" method="">
+                                    <fieldset> 
+                                        <input type="text" name="date" placeholder="Date" disabled>                               
+                                        <textarea  name="viewMonthlySales " placeholder="View the Monthly Sales here..." disabled></textarea>
+                                     </fieldset> 
+                                </form>
+                        </div> 
+                </div>              
+                <div id="quarterly-sales" class="tabcontent" style="display:none">
+                        <div class="search">
+                                <form action="" method="GET" id="salesSearch">
+                                    <legend><span class="heading"> Quarterly Sales</span></legend>
+                                    <label> Date From :</label> <input type="date"> <br>
+                                    <label> Date To :</label> <input type="date"> <br>                
+                                    <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                                </form>
+                            </div>
+                            <div class="form">
+                                <form enctype="text/plain" id="quarterlySales-form" action="" method="">
+                                    <fieldset> 
+                                        <input type="text" name="date" placeholder="Date" disabled>                               
+                                        <textarea  name="viewQuarterlySales " placeholder="View the Quarterly Sales here..." disabled></textarea>
+                                     </fieldset> 
+                                </form>
+                            </div> 
+                </div>              
+                <div id="annual-sales" class="tabcontent" style="display:none">
+                        <div class="search">
+                                <form action="" method="GET" id="salesSearch">
+                                    <legend><span class="heading"> Annual Sales</span></legend>
+                                    <label> Date From :</label> <input type="date"> <br>
+                                    <label> Date To :</label> <input type="date"> <br>                
+                                    <button type="submit" class="search sales"> <i class="fas fa-search"> </i> </button>
+                                </form>
+                            </div>
+                            <div class="form">
+                                <form enctype="text/plain" id="annualSales-form" action="" method="">
+                                    <fieldset> 
+                                        <input type="text" name="date" placeholder="Date" disabled>                               
+                                        <textarea  name="viewAnnualSales " placeholder="View the Annual Sales here..." disabled></textarea>
+                                     </fieldset> 
+                                </form>
+                            </div> 
+                </div>               
+               
+            </div>    
+        </section>
+
+        <!--Footer-->
+        <footer>
+           <p> Copyright &copy;2018  Store Manager</p>
+        </footer>
+            
+    </div>   
+     <!-- Wrapper end--> 
+</body>
+
+</html>
