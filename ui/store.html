@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!--Wrapper start-->
+    <div class= "wrapper">
+        <!--Header-->
+        <header class= "main-header">
+            <p>
+                You are logged in as : <br>
+                <a href="index.html"><strong>LOG OUT</strong></a>
+            </p>
+            <h1> Store Manager</h1>
+            
+        </header>
+    
+    
+        <!--Navigation Bar-->
+        <nav class= "navbar">
+            <ul>
+                <li></li>
+                <li></li>
+                <li > <a href="dashboard.html">Dashboard</a> </li>
+                <li class= "current"> <a href="store.html">Store</a></li>
+                <li> <a href="#suppliers">Suppliers </a></li>
+                <li> <a href="#help">Help</a></li>
+            </ul>
+        </nav> 
+
+        <!--Main Body-->
+        <section class= "boxes">
+            <div class="megabox"> 
+            <div class="megaform">
+                <div> 
+                    <form>
+                        <fieldset>
+                            <input type="text" placeholder="Search by Product Name..." name="search" class="search">
+                            <button type="submit" class="search"> <i class="fas fa-search-plus">Add </i> </button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="megaform" action="/action_page">
+                    <form>
+                    <fieldset>
+                        <legend><span class="heading"><i class="fas fa-cart-arrow-down"> Shopping Cart </i></span></legend>
+                        <textarea id="cart" name="cart" placeholder="add product here..." ></textarea>
+                    </fieldset>
+                    <input  type="submit" name="checkout" value="Check Out">
+                    <input  type="reset" name="cancel" value="Cancel">  
+                </form>
+            </div>
+          </div>
+        </section>
+        
+        <footer>
+            <p> Copyright &copy;2018  Store Manager</p>
+        </footer>
+               
+    </div>
+    <!-- Wrapper end-->
+    
+
+   
+</body>
+
+</html>
