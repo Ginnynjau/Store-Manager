@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!--Wrapper start-->
+    <div class= "wrapper">
+        <!--Header-->
+        <header class= "main-header">
+            <p>You are logged in as :</p>
+            <h1> Store Manager</h1>
+            
+        </header>
+    
+    
+        <!--Navigation Bar-->
+        <nav class= "navbar">
+            <ul>
+                <li></li>
+                <li></li>
+                <li class= "current"> <a href="dashboard.html">Dashboard</a> </li>
+                <li> <a href="store.html">Store</a></li>
+                <li> <a href="#suppliers">Suppliers </a></li>
+                <li> <a href="#help">Help</a></li>
+            </ul>
+        </nav> 
+
+        <!--Main Body-->
+        <section class= "show">
+            <!--Animated side navigation-->
+            <div id="mySidenav" class="sidenav">
+                <a href="users.html" id="users">Users</a>
+                <a href="products.html" id="products">Products</a>
+                <a href="sales.html" id="sales">Sales</a>
+                <a href="reports.html" id="reports">Reports</a>
+            </div>
+
+            <!-- The sidebar -->
+            <div class="tab">
+                <button  class="tablinks users" onclick="openUsersTab(event, 'new-user')" id="defaultOpen" >Add New User </button>
+                <button class="tablinks users" onclick="openUsersTab(event, 'view-users')" >View Users</button>
+                <button  class="tablinks users" onclick="openUsersTab(event, 'edit-user')" >Edit User</button>
+                <button  class="tablinks users" onclick="openUsersTab(event, 'delete-user')">Delete User </button>
+                <button class="tablinks users" onclick="openUsersTab(event, 'view-roles')" >User Roles</button>
+                <button  class="tablinks users" onclick="openUsersTab(event, 'add-roles')" >Add User Role</button>
+                <button  class="tablinks users" onclick="openUsersTab(event, 'edit-role')" >Edit User Role </button>
+                <button class="tablinks users" onclick="openUsersTab(event, 'delete-role')">Delete User Role</button>
+            </div>
+            
+            <!-- Page content -->
+            <div id="new-user" class="tabcontent" >
+                <div class="form">
+                        <fieldset>
+                            <legend><span class="heading"> New User</span></legend>
+                            <input type="text" name="firstName" placeholder="First Name">
+                            <input type="text" name="lastName" placeholder="Last Name"> 
+                            <input type="tel" name="phoneNumber" placeholder="Phone Number">
+                            <input type="email" name="email" placeholder="Email"> 
+                            <select>
+                                <option name="userRole" selected> Select a User Role...</option>
+                                <option name="userRole" value ="admin"> Admin </option>
+                                <option name="userRole" value ="supervisor"> Supervisor </option>
+                                <option name="userRole" value ="Attendant"> Store Attendant </option>
+                            </select>
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="password" name="password" placeholder="Password"> 
+                        </fieldset>
+                        <input type="submit" name="submit" value="Add User" class="users"> 
+                    </form>
+                </div>
+            </div> 
+
+            <div id="view-users" class="tabcontent" style="display:none">
+                <div class="form">
+                    <form enctype="text/plain" id="viewUser-form" action="" method="GET">
+                        <fieldset>
+                        <legend><span class="heading"> View Users</span></legend>
+                            <textarea  name="viewUsers" placeholder="View List of Users here..." ></textarea>
+                        </fieldset>
+                     </form>
+                </div>
+            </div>  
+
+            <div id="edit-user" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="userSearch">
+                        <legend><span class="heading"> Edit User</span></legend>
+                        <input type="search" placeholder="Search Users by Name.." name="search">
+                        <button type="submit" class="search users"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="editUser-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="firstName" placeholder="First Name">
+                            <input type="text" name="lastName" placeholder="Last Name"> 
+                            <input type="tel" name="phoneNumber" placeholder="Phone Number">
+                            <input type="email" name="email" placeholder="Email">
+                            <select> 
+                                <option name="userRole" value ="admin"> Admin </option>
+                                <option name="userRole" value ="supervisor"> Supervisor </option>
+                                <option name="userRole" value ="Attendant"> Store Attendant </option>
+                            </select>
+                            <input type="text" name="username" placeholder="Username">
+                        </fieldset>
+                        <input type="submit" name="submit" value="Save" class="users"> 
+                    </form>
+                </div>
+            </div>
+
+            <div id="delete-user" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="userSearch">
+                        <legend><span class="heading"> Delete User</span></legend>
+                        <input type="search" placeholder="Search Users by Name.." name="search">
+                        <button type="submit" class="search users"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="deleteUser-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="firstName" placeholder="First Name" disabled>
+                            <input type="text" name="lastName" placeholder="Last Name" disabled>
+                            <input type="text" name="phoneNumber" placeholder="Phone Number" disabled>
+                            <input type="text" name="email" placeholder="Email" disabled>
+                            <input type="text" name="userRole" disabled>
+                            <input type="text" name="username" placeholder="Username" disabled>
+                        </fieldset>
+                        <input type="submit" name="delete" value="Delete" class="beware"> 
+                    </form>
+                </div>
+            </div> 
+            
+            <div id="view-roles" class="tabcontent" style="display:none">
+               <div class="form">
+                    <form enctype="text/plain" id="viewRoles-form" action="" method="GET">
+                        <fieldset>
+                        <legend><span class="heading"> View User Roles</span></legend>
+                        <select>
+                                <option name="userRole" selected> Select a User Role...</option>
+                                <option name="userRole" value ="admin"> Admin </option>
+                                <option name="userRole" value ="supervisor"> Supervisor </option>
+                                <option name="userRole" value ="Attendant"> Store Attendant </option>
+                        </select>
+                        <textarea  name="viewUsers" placeholder="View the rights to the selected User Role..." ></textarea>
+                        </fieldset>
+                     </form>
+                </div>
+            </div>  
+
+            <div id="add-roles" class="tabcontent" style="display:none">
+                <div class="megaform">
+                    <form enctype="text/plain" id="newRole-form" action="" method="">
+                        <fieldset class= "boxes" >
+                            <legend><span class="heading"> New User Role</span></legend>
+                            <input type="text" name="UserRole" placeholder="Role"> 
+                            <fieldset class="box">
+                                <label>Users:</label> 
+                                <p>  
+                                <input type="checkbox" name="rights" >Add New User <br>
+                                <input type="checkbox" name="rights">View Users <br>
+                                <input type="checkbox" name="rights">Edit User <br>
+                                <input type="checkbox" name="rights">Delete User<br>
+                                <input type="checkbox" name="rights">Assign User Roles <br>
+                                <input type="checkbox" name="rights">Add User Role<br>
+                                <input type="checkbox" name="rights">View User Roles<br>
+                                <input type="checkbox" name="rights">Edit User Role<br>
+                                <input type="checkbox" name="rights">Delete User Role<br>
+                                </p>
+                            </fieldset>
+                            <fieldset class="box">
+                                <label>Products:</label> 
+                                <p>  
+                                <input type="checkbox" name="rights" >Add New Product<br>
+                                <input type="checkbox" name="rights">View Products<br>
+                                <input type="checkbox" name="rights">Edit Products<br>
+                                <input type="checkbox" name="rights">Delete Products<br>
+                                <input type="checkbox" name="rights">Add Product Category <br>
+                                <input type="checkbox" name="rights">View Product Categories <br>
+                                <input type="checkbox" name="rights">Edit Product Category <br>
+                                <input type="checkbox" name="rights">Delete Product Category <br>
+                                </p>
+                            </fieldset>
+                            <fieldset class="box">
+                                <label>Sales:</label> 
+                                <p>  
+                                    <input type="checkbox" name="rights" >View User Sales <br>
+                                    <input type="checkbox" name="rights">View Daily Sales<br>
+                                    <input type="checkbox" name="rights">View Weekly Sales <br>
+                                    <input type="checkbox" name="rights">View Monthly Sales<br>
+                                    <input type="checkbox" name="rights">View Quarterly Sales <br>
+                                    <input type="checkbox" name="rights">View Annual Sales<br>
+                                </p>
+                            </fieldset>
+                            <fieldset class="box">
+                                <label>Reports:</label> 
+                                 <p>  
+                                    <input type="checkbox" name="rights" >View User Reports <br>
+                                    <input type="checkbox" name="rights">View Daily Reports<br>
+                                    <input type="checkbox" name="rights">View Weekly Reports <br>
+                                    <input type="checkbox" name="rights">View Monthly Reports<br>
+                                    <input type="checkbox" name="rights">View Quarterly Reports <br>
+                                    <input type="checkbox" name="rights">View Annual Reports<br>
+                                </p>
+                            </fieldset>
+                        </fieldset>
+                        <input type="submit" name="submit" value="Add Role" class="users"> 
+                    </form>
+                </div>
+            </div>
+
+            <div id="edit-role" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="roleSearch">
+                        <legend><span class="heading"> Edit User Role</span></legend>
+                        <input type="search" placeholder="Search Roles by Name.." name="search">
+                        <button type="submit" class="search users"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="editRole-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="UserRole" placeholder="Role"> Rights
+                            
+                            
+                        </fieldset>
+                        <input type="submit" name="submit" value="Save" class="users"> 
+                    </form>
+                </div>
+            </div> 
+
+            <div id="delete-role" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="roleSearch">
+                        <legend><span class="heading"> Delete User</span></legend>
+                        <input type="search" placeholder="Search Roles by Name.." name="search">
+                        <button type="submit" class="search users"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="deleteRole-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="UserRole" placeholder="Role" disabled>
+                            <textarea  name="viewUsers" placeholder="View the rights to the selected User Role..." disabled></textarea>
+                        </fieldset>
+                        <input type="submit" name="delete" value="Delete" class="beware"> 
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+
+        <!--Footer-->
+        <footer>
+                <p> Copyright &copy;2018  Store Manager</p>
+        </footer>
+
+    </div>
+    <!-- Wrapper end-->
+   
+
+</body>
+</html>
