@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!--Wrapper start-->
+    <div class= "wrapper">
+        <!--Header-->
+        <header class= "main-header">
+            <p>You are logged in as :</p>
+            <h1> Store Manager</h1>
+            
+        </header>
+    
+        <!--Navigation Bar-->
+        <nav class= "navbar">
+            <ul>
+                <li></li>
+                <li></li>
+                <li class= "current"> <a href="dashboard.html">Dashboard</a> </li>
+                <li> <a href="store.html">Store</a></li>
+                <li> <a href="#suppliers">Suppliers </a></li>
+                <li> <a href="#help">Help</a></li>
+            </ul>
+        </nav> 
+
+        <!--Main Body-->
+        <section class= "show">
+            <!--Animated side navigation-->
+            <div id="mySidenav" class="sidenav">
+                <a href="users.html" id="users">Users</a>
+                <a href="products.html" id="products">Products</a>
+                <a href="sales.html" id="sales">Sales</a>
+                <a href="reports.html" id="reports">Reports</a>
+            </div>
+            <!-- The sidebar -->
+            <div class="tab">
+                <button  class="tablinks products" onclick="openProductTab(event, 'new-product')" id="defaultOpen" >Add New Product </button>
+                <button class="tablinks products" onclick="openProductTab(event, 'view-products')" >View Products</button>
+                <button  class="tablinks products" onclick="openProductTab(event, 'edit-product')" >Edit Product</button>
+                <button  class="tablinks products" onclick="openProductTab(event, 'delete-product')">Delete Product </button>
+                <button class="tablinks products" onclick="openProductTab(event, 'view-categories')" >Products Categories</button>
+                <button  class="tablinks products" onclick="openProductTab(event, 'add-category')" >Add Product Category</button>
+                <button  class="tablinks products" onclick="openProductTab(event, 'edit-category')" >Edit Product Category </button>
+                <button class="tablinks products" onclick="openProductTab(event, 'delete-category')">Delete Product Category</button>
+            </div>
+            
+            <!-- Page content -->
+            <div id="new-product" class="tabcontent" >
+                <div class="form">
+                    <form enctype="text/plain" id="newProduct-form" action="" method="">
+                        <fieldset>
+                            <legend><span class="heading"> New Product</span></legend>
+                            <input type="text" name="productName" placeholder="Product Name">
+                            <input type="number" name="netWeight" placeholder="Net Weight Value">
+                            <input type="number" name="price" placeholder="Unit Price">  
+                            <select>
+                                    <option name="uits" selected> Select a Metric Unit...</option>
+                                    <option name="uits" value="grams"> (g) grams</option>
+                                    <option name="uits" value =" Kgs"> (Kgs) Kilograms </option>
+                                    <option name="uits" value ="Ml"> (Ml) Millilitres </option>
+                                    <option name="uits" value ="L">  (L) Litres</option>
+                                    <option name="uits" value ="Cm"> (Cm) Centimetres </option>
+                                    <option name="uits" value ="M">  (M) Metres</option>
+                                </select>
+                                <select>
+                                    <option name="category" selected> Select a Category...</option>
+                                    <option name="category" value =""> </option>
+                                    <option name="category" value ="">  </option>
+                                    <option name="category" value ="">  </option>
+                                </select>
+                                <select>
+                                    <option name="supplier" selected> Select the Supplier...</option>
+                                    <option name="supplier" value =""> </option>
+                                    <option name="supplier" value ="">  </option>
+                                    <option name="supplier" value ="">  </option>
+                                </select>
+                        </fieldset>
+                        <input type="submit" name="submit" value="Add Product" class="products"> 
+                    </form>
+                </div>
+            </div>
+
+            <div id="view-products" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="productSearch">
+                        <legend><span class="heading"> View Products</span></legend>
+                        <input type="search" placeholder="Search Products by Name.." name="search">
+                        <button type="submit" class="search products"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="viewProducts-form" action="" method="GET">
+                        <fieldset>
+                            <textarea  name="viewProducts" placeholder="View List of Products here..." ></textarea>
+                        </fieldset>
+                    </form>
+                </div>
+            </div> 
+
+            <div id="edit-product" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="productSearch">
+                        <legend><span class="heading"> Edit Product</span></legend>
+                        <input type="search" placeholder="Search Products by Name.." name="search">
+                        <button type="submit" class="search products"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                        <form enctype="text/plain" id="editProduct-form" action="" method="">
+                            <fieldset>
+                                    <input type="text" name="productName" placeholder="Product Name">
+                                    <input type="number" name="netWeight" placeholder="Net Weight Value"> 
+                                    <input type="number" name="price" placeholder="Unit Price">
+                                    <select>
+                                        <option name="uits" selected> Select a Metric Unit...</option>
+                                        <option name="uits" value="grams"> (g) grams</option>
+                                        <option name="uits" value =" Kgs"> (Kgs) Kilograms </option>
+                                        <option name="uits" value ="Ml"> (Ml) Millilitres </option>
+                                        <option name="uits" value ="L">  (L) Litres</option>
+                                        <option name="uits" value ="Cm"> (Cm) Centimetres </option>
+                                        <option name="uits" value ="M">  (M) Metres</option>
+                                    </select>
+                                    <select>
+                                        <option name="category" selected> Select a Category...</option>
+                                        <option name="category" value =""> </option>
+                                        <option name="category" value ="">  </option>
+                                        <option name="category" value ="">  </option>
+                                    </select>
+                                    <select>
+                                        <option name="supplier" selected> Select the Supplier...</option>
+                                        <option name="supplier" value =""> </option>
+                                        <option name="supplier" value ="">  </option>
+                                        <option name="supplier" value ="">  </option>
+                                    </select>
+                            </fieldset>
+                            <input type="submit" name="submit" value="Save" class="products"> 
+                        </form>
+                    </div>
+            </div>
+
+            <div id="delete-product" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="productSearch">
+                        <legend><span class="heading"> Delete Product</span></legend>
+                        <input type="search" placeholder="Search Products by Name.." name="search">
+                        <button type="submit" class="search products"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>
+                <div class="form">
+                    <form enctype="text/plain" id="deleteProduct-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="productName" placeholder="Product Name" disabled>
+                            <input type="text" name="netWeight" placeholder="Net Weight Value" disabled>
+                            <input type="text" name="units" placeholder="Metric Unit" disabled>
+                            <input type="text" name="price" placeholder="Unit Price" disabled>
+                            <input type="text" name="category" placeholder="Category" disabled>
+                            <input type="text" name="supplier" placeholder="Supplier" disabled>
+                        </fieldset>
+                        <input type="submit" name="delete" value="Delete" class="beware"> 
+                    </form>
+                </div>
+            </div>
+            
+            <div id="view-categories" class="tabcontent" style="display:none">
+                <div class="form">
+                    <form enctype="text/plain" id="viewCategories-form" action="" method="GET">
+                        <legend><span class="heading"> View Product Categories</span></legend>
+                        <fieldset>
+                            <textarea  name="viewProducts" placeholder="View List of Product Category here..." ></textarea>
+                        </fieldset>
+                    </form>
+                </div>
+            </div> 
+
+            <div id="add-category" class="tabcontent" style="display:none">
+                <div class="form">
+                    <form enctype="text/plain" id="newCategory-form" action="" method="">
+                        <legend><span class="heading"> New Product Category</span></legend>
+                        <fieldset>
+                            <input type="text" name="categoryName" placeholder="Product Name">
+                            <textarea  name="categoryDescription" placeholder="Product Category Description..." ></textarea>
+                        </fieldset> 
+                        <input type="submit" name="submit" value="Add Category" class="products">    
+                    </form>
+                </div>                              
+            </div>
+
+            <div id="edit-category" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="productSearch">
+                        <legend><span class="heading"> Edit Product Category</span></legend>
+                        <input type="search" placeholder="Search Category by Name.." name="search">
+                        <button type="submit" class="search products"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>                
+                <div class="form">
+                    <form enctype="text/plain" id="editCategory-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="categoryName" placeholder="Category Name">
+                            <textarea  name="categoryDescription" placeholder="Product Category Description..." ></textarea>
+                        </fieldset> 
+                        <input type="submit" name="submit" value="Save" class="products">    
+                    </form>
+                </div>    
+            </div>
+
+            <div id="delete-category" class="tabcontent" style="display:none">
+                <div class="search">
+                    <form action="" method="GET" id="productSearch">
+                        <legend><span class="heading"> Edit Product Category</span></legend>
+                        <input type="search" placeholder="Search Category by Name.." name="search">
+                        <button type="submit" class="search products"> <i class="fas fa-search"> </i> </button>
+                    </form>
+                </div>                
+                <div class="form">
+                    <form enctype="text/plain" id="deleteCategory-form" action="" method="">
+                        <fieldset>
+                            <input type="text" name="categoryName" placeholder="Category Name" disabled> 
+                            <textarea  name="categoryDescription" placeholder="Product Category Description..." disabled></textarea>
+                        </fieldset> 
+                        <input type="submit" name="delete" value="Delete" class="beware"> 
+                    </form>
+                </div>    
+            </div>
+              
+        </section>
+
+         <!--Footer-->
+        <footer>
+            <p> Copyright &copy;2018  Store Manager</p>
+         </footer>
+           
+    </div>
+    <!-- Wrapper end-->
+   
+
+</body>
+
+</html>

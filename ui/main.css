@@ -4,6 +4,7 @@
     --dark: #333333;
     --light: #ffffff;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --warning: #ff0000;
 }
 
 html{
@@ -86,11 +87,220 @@ img{
 }
 
 .show{
-    display: -ms-inline-grid;
+   
     grid-gap:10px;
     padding:0px;
 }
 
+/* Forms */
+
+.form{
+    max-width: 400px;
+    overflow:auto;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+    font-size: 2rem;
+}
+
+.megaform{
+    max-width: 800px;
+    overflow:auto;
+    padding: 10px;
+    position: relative;
+    border:none;
+    font-size: 2rem;
+    width: 80%;
+}
+
+form p{
+    font-size: 0.6em !important;
+    text-align: left !important; 
+}
+
+form legend{
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.megaform input[type="text"]{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--light);
+    border:none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding:7px;
+    width: 80%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:var(--dark);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: var(--shadow) inset;
+}
+
+.megaform input[type="text"]:focus,{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--light);
+    border:none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding:7px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #fae3ce;
+    color:var(--dark);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: var(--shadow) inset;
+}
+
+.megaform input[type="submit"], .megaform input[type="reset"] {
+    position: relative;
+    display: block;
+    box-shadow: var(--shadow);
+    border-width: 1px 1px 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px 39px 15px 39px;
+    color: var(--dark);
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    font-style:normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 60%;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form input[type="tel"], .form input[type="search"], .form select, .form textarea{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--light);
+    border:none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding:7px;
+    width: 80%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:var(--dark);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: var(--shadow) inset;
+}
+
+.form input[type="text"]:focus, .form input[type="password"]:focus, .form input[type="email"]:focus, .form input[type="number"]:focus, .form input[type="tel"]:focus, .form input[type="search"]:focus, .form select:focus, .search input[type="search"]:focus, {  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--light);
+    border:none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding:7px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #fae3ce;
+    color:var(--dark);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: var(--shadow) inset;
+}
+
+.form input[type="submit"], .form input[type="reset"] {
+    position: relative;
+    display: block;
+    box-shadow: var(--shadow);
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    padding: 15px 39px 15px 39px;
+    color: var(--light);
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    font-style:normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 80%;
+}
+.checkboxes{
+    font-style:normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.search{
+    max-width: 400px;
+    overflow:hidden;
+    border:none;
+    padding: 10px;
+    position: relative;
+    font-size: 2rem;
+}
+
+.search legend{
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.search input[type="search"]{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--light);
+    border:none;
+    border-radius: 0px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding:7px;
+    width: 78%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:var(--dark);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: var(--shadow) inset;
+
+}
+.search button{
+    width: 20%;
+    margin:0px;
+    padding: 5px;
+    color: var(--dark);
+    font-size: 17px;
+    border: 1px solid grey;
+    cursor: pointer;
+    font-family: fantasy;
+}
+
+.search button:hover {
+    background: var(--dark);
+    color:var(--primary)
+  }
+
+fieldset{
+    border: none;
+    margin: 5px;
+    position: relative;
+}
+
+form label{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: 0.6em !important;
+    color: var(--dark);
+    text-align: left !important;
+}
 
 /* login */
 .login{
@@ -103,19 +313,13 @@ img{
     font-size: 2rem;
 }
 
-.login fieldset{
-    border: none;
-    margin: 10px;
-    position: relative;
-}
-
 .login legend{
     font-size: 1.4em;
     margin-bottom: 2px;
 }
 
 
-.login input[type="text"], .login input[type="password"]{
+.login input[type="text"], .login input[type="password"], .productsearch input[type="text"]{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: #ffffff;
     border:none;
@@ -134,8 +338,7 @@ img{
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 }
 
-.login input[type="text"]:focus, .login input[type="password"]:focus{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.login input[type="text"]:focus, .login input[type="password"]:focus, .productsearch input[type="text"]:focus {   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: #ffffff;
     border:none;
     border-radius: 6px;
@@ -159,7 +362,7 @@ img{
     box-shadow: var(--shadow);
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
-    padding: 19px 39px 18px 39px;
+    padding: 15px 39px 15px 39px;
     color: var(--light);
     margin: 0 auto;
     background: #ff751a;
@@ -186,6 +389,15 @@ img{
     border-radius: 35px;
 }
 
+.megabox{
+    background:var(--light);
+    text-align: left;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+    width: 80%;
+    border-radius: 35px;
+}
 .image {
     opacity: 1;
     display: block;
@@ -219,6 +431,35 @@ img{
     font-size: 16px;
     padding: 16px 32px;
   }
+
+  
+.cart{
+    text-align: left;
+    max-width: auto;
+    position: relative; 
+    border: none;
+    overflow:hidden;
+}
+
+.productsearch input[type="submit"], .productsearch input[type="reset"]{
+    display: -ms-inline-grid;
+    grid-gap:50px;
+    margin-bottom: 10px;
+    margin-right:30px;
+    padding: 19px 39px 18px 39px;
+    box-shadow: var(--shadow);
+    font-size: 20px;
+    text-align: center;
+    font-style:normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:250px;
+}
+
+.productsearch{
+    margin: 10px 30px;
+    overflow:auto;
+   
+}
 
 
 /* Animated Side Navigation */
@@ -303,6 +544,11 @@ img{
     background:#cca300;
 }
 
+.beware{
+    background: var(--dark);
+    color: var(--warning);
+}
+
 
 .tab button:hover {
     background-color: var(--dark);
@@ -327,13 +573,15 @@ img{
 
 footer{
     position: relative;
+    bottom:0;
+    width: 100%;
     display: block;
-    padding: 1px;
-    margin-top: auto;
+    left: 0px;
     background: #ffe6b3;
     color: var(--dark);
-    text-align: center;
+    text-align: center !important;
 }
+
 
 
 /* Media Queries */
